@@ -20,20 +20,31 @@
 //TODO:===================================
   
        //Знайти в рядку слово 'spam' та замінити його на '@@@@'
-const str = 'I gEt sO much sPam at wOrk.'
+// const str = 'I gEt sO much sPam at wOrk.'
 
-// console.log(str.toLowerCase().replace('spam', '@@@@'));
-console.log(str.toLowerCase().slice(0, str.toLowerCase().indexOf('spam')));
+// // console.log(str.toLowerCase().replace('spam', '@@@@'));
+// console.log(str.toLowerCase().slice(0, str.toLowerCase().indexOf('spam')));
 
-// Вивести в консоль все що написано до слова 'spam'
+// // Вивести в консоль все що написано до слова 'spam'
+
+// //TODO:===================================
+// // Напиши скрипт який перевіряє чи закінчується значення змінної link символом /.
+// //  Якщо ні, додай до кінця значення link цей символ. Використовуй конструкцію if...else.
+
+// let link = 'https://my-site.com/about';
+
+// if(!link.endsWith("/")){
+// link+="/"
+// }
+// console.log(link);
 
 //TODO:===================================
-// Напиши скрипт який перевіряє чи закінчується значення змінної link символом /.
-//  Якщо ні, додай до кінця значення link цей символ. Використовуй конструкцію if...else.
+//Напишіть цикл, який виводить у консоль
+// числа від max до min за спаданням
 
-let link = 'https://my-site.com/about';
+const max = 100;
+const min = 23;
 
-if(!link.endsWith("/")){
-link+="/"
+for (let i = max; i >= min; i--) {
+    console.log(i);
 }
-console.log(link);
