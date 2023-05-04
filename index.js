@@ -26,3 +26,14 @@ const str = 'I gEt sO much sPam at wOrk.'
 console.log(str.toLowerCase().slice(0, str.toLowerCase().indexOf('spam')));
 
 // Вивести в консоль все що написано до слова 'spam'
+
+//TODO:===================================
+// Напиши скрипт який перевіряє чи закінчується значення змінної link символом /.
+//  Якщо ні, додай до кінця значення link цей символ. Використовуй конструкцію if...else.
+
+let link = 'https://my-site.com/about';
+
+if(!link.endsWith("/")){
+link+="/"
+}
+console.log(link);
