@@ -13,3 +13,19 @@
 // }
 // console.log(sumTotal);
 // console.log(sumArray);
+
+
+
+//Створити новий масив клієнтів,яких немає в чорному списку
+
+const oldClients = ["Mango", "Ajax", "Poly","Jane","Choti","Toni","Alex","David","John","Dorian"];
+const blackList = ["David","Mango","John", "Toni"];
+const clearClients = [];
+
+for (const client of oldClients) {
+if (!blackList.includes(client)) {
+clearClients.push(client);
+}
+    //console.log(client);
+} 
+console.log(clearClients);
