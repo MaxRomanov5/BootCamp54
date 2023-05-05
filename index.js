@@ -1,6 +1,6 @@
 //TODO:===================================
 //Порахувати витрати компанії за квартал
-  
+
 
 // const firstq = [1500,1200,2000]
 // const secondq = [100,1700,2500]
@@ -57,3 +57,36 @@
 //     }
 // }
 // console.log(electronicTickets);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TODO:==========================
+//Повернути відсортовану масив за зростанням
+
+//не використовувати Array.prototype.sort()
+const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+
+
+for (let i of numbers) {
+   for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > numbers[i + 1]) {
+        let numberOne = numbers[i];
+        numbers[i] = numbers[i + 1];
+        numbers[i + 1] = numberOne;
+    }
+    
+}
+}
+
+
+console.log(numbers);
