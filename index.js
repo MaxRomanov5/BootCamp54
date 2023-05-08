@@ -124,18 +124,38 @@
 // Має бути паттерн раннє повернення
 
 
-function filterArray (arr){
-    let langust = [];
-    for (const fish of arr) {
-        if (fish === 'лангуст') {
-            langust.push(fish);
-            } else if (fish === 'зіпсований') {
-            return 'В цьому в кошику є зіпсований лангуст';
-             }
-    }
-    return langust;
+// function filterArray (arr){
+//     let langust = [];
+//     for (const fish of arr) {
+//         if (fish === 'лангуст') {
+//             langust.push(fish);
+//             } else if (fish === 'зіпсований') {
+//             return 'В цьому в кошику є зіпсований лангуст';
+//              }
+//     }
+//     return langust;
         
-}
+// }
 
-console.log(filterArray(['лангуст','краб','лангуст','лангуст','краб','краб','лангуст','лангуст','лангуст','краб']));
-console.log(filterArray(['краб','зіпсований','лангуст','краб','лангуст','лангуст','краб','лангуст']));
+// console.log(filterArray(['лангуст','краб','лангуст','лангуст','краб','краб','лангуст','лангуст','лангуст','краб']));
+// console.log(filterArray(['краб','зіпсований','лангуст','краб','лангуст','лангуст','краб','лангуст']));
+
+// TODO:==========================
+// Напишіть функцію, яка замінює регістр кожного символу
+// у рядку на протилежний
+// Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
+ console.log(changeCase('JavaScript'));
+
+function changeCase(string){
+   let words = '';
+   let array = string.split('')
+   for(let word of array){
+    if(word === word.toLowerCase()){
+      words = words + word.toUpperCase()
+    } else {
+        words += word.toLowerCase()
+    }
+   }
+
+   return words
+}
