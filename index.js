@@ -74,19 +74,44 @@
 //Повернути відсортовану масив за зростанням
 
 //не використовувати Array.prototype.sort()
-const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
 
 
-for (let i of numbers) {
-   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > numbers[i + 1]) {
-        let numberOne = numbers[i];
-        numbers[i] = numbers[i + 1];
-        numbers[i + 1] = numberOne;
-    }
+// for (let i of numbers) {
+//    for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > numbers[i + 1]) {
+//         let numberOne = numbers[i];
+//         numbers[i] = numbers[i + 1];
+//         numbers[i + 1] = numberOne;
+//     }
     
-}
-}
+// }
+// }
 
 
-console.log(numbers);
+// console.log(numbers);
+
+// TODO:==========================
+//Написати функцію розіграшу скидок в магазині Apple
+//Вона приймає назву товару та його ціну,а повертає рядок
+// 'Ваш <назва товару> буде коштувати <число> з урахуванням скидок!'
+//доповнити функцію newPrice,щоб вона приймала ціну,генерувала рандомну скидку
+// та повертала ціну з урахуванням скидки
+
+
+
+
+// function newPrice(price){
+// const randomNumber = (Math.random() * (10 - 1) + 1).toFixed(0)
+// return price - price * randomNumber / 100
+// }
+
+
+// function saleApple(name,totalSpent){
+    
+//     return `Ваш ${name} буде коштувати ${newPrice(totalSpent)} з урахуванням скидок!`
+// }
+
+// console.log(saleApple('Iphone13',1000));
+// console.log(saleApple('Iphone14ProMax',2000));
+// console.log(saleApple('IphoneX',700));
