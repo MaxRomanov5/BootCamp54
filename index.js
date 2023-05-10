@@ -114,9 +114,34 @@ const classTutor = {
 
 
 
-console.log(classTutor.addStudent('loly', 3, 3, 5));
-console.log(classTutor.studentGrade('steve'));
-// console.log(classTutor.classGrade());
-console.log(classTutor.objectGrade('math'));
-console.log(classTutor.getStudents());
+// console.log(classTutor.addStudent('loly', 3, 3, 5));
+// console.log(classTutor.studentGrade('steve'));
+// // console.log(classTutor.classGrade());
+// console.log(classTutor.objectGrade('math'));
+// console.log(classTutor.getStudents());
+
+
+
+
+///Написати фунцію,яка буде приймати аргументами два обєкта і повертати один.Ключі в обєктах однакові і
+//треба щоб обирався в фінальний обєкт ключ,який має більше значення
+
+// const newObject = function (object1, object2) {
+  
+//   let newObject = {...object1};
+
+//   const keys = Object.keys(object1);
+//   for (const key of keys) {
+//     if (object1[key] < object2[key]) {
+//       newObject[key] = object2[key];
+//       }
+//     }
+//   return newObject;
+// }
+
+
+
+// console.log(newObject({a:1,b:8,c:2},{a:5,b:3,c:9}));
+// console.log(newObject({a:5,b:1,c:6},{a:4,b:7,c:3}));
+
 
