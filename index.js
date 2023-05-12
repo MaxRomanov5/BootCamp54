@@ -246,7 +246,18 @@ const countries = [
 //TODO:============================
 //Повернути масив назв країн у зворотньому алфавітному порядку
 
-const sortedCountryName = countries.map(country => country.name).sort((firstCountry, secondCountry) => secondCountry.localeCompare(firstCountry));
+// const sortedCountryName = countries.map(country => country.name).sort((firstCountry, secondCountry) => secondCountry.localeCompare(firstCountry));
 
-console.table(sortedCountryName)
+// console.table(sortedCountryName)
 
+//TODO:============================
+//Написати функцію,яка буде рахувати середню площу країн
+
+// function getAverageArea(arrayCountries) {
+//   const totalArea = arrayCountries.reduce((acc, country) => {
+//     return acc + country.area;
+//   }, 0)
+//   return totalArea / arrayCountries.length;
+// }
+
+// console.log(getAverageArea(countries));
