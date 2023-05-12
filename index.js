@@ -274,10 +274,69 @@ const countries = [
 
 //Створити масив унікальних країн-сусідів в алфавітному порядку використати reduce
 
-const borderCountries = countries.reduce((borderArray, country)=>{
- borderArray.push(...country.borders)
- return borderArray
-},[]).filter((borderCountry, index, array) => array.indexOf(borderCountry) === index).sort((a, b)=>{
-  return a.localeCompare(b)
-})
-console.log(borderCountries);
+// const borderCountries = countries.reduce((borderArray, country)=>{
+//  borderArray.push(...country.borders)
+//  return borderArray
+// },[]).filter((borderCountry, index, array) => array.indexOf(borderCountry) === index).sort((a, b)=>{
+//   return a.localeCompare(b)
+// })
+// console.log(borderCountries);
+
+
+
+
+
+
+
+
+
+//Написати функцію для закупок зброї для ЗСУ
+//Функція приймає масив з потрібною зброєю. Стрворює два масиви
+//перший замовлення,яке можна виконати(є потрібна кількість),другий які не можна
+//Написати функцію,яка буде приймати ці два масиви та ще два колбек
+//Перший колбек оброблює масив та виводить в консоль'You can buy:<Зброя та її кількісь>'
+//Другий колбек оброблює масив та виводить в консоль 'You canе buy:<Зброя та її кількісь>'
+
+const staffNato = [
+  { name: 'bayraktar', price: 300000, quantity: 10 },
+  { name: 'javelin', price: 8000, quantity: 1140 },
+  { name: 'leopard', price: 210000, quantity: 400 },
+  { name: 'f-16', price: 1000000, quantity: 8 }
+]
+function buyWeapon(neededWeapon, callback) {
+  const canBuy = [];
+  const cantBuy = [];
+// neededWeapon.forEach(weapon => {weapon.quantity >= staffNato[weapon.name].quantity});
+  for (const weapon of neededWeapon) {
+    for (const weaponNato of staffNato) {
+      if (weapon.name === weaponNato.name) {
+        if (weapon.quantity > weaponNato.quantity) {
+          cantBuy.push(weapon.name);
+        } else {
+          canBuy.push(weapon.name);
+        }
+      }
+    }
+  }
+  return callback(canBuy, cantBuy);
+}
+
+function officialAnswer(param1, param2) {
+  return `We can buy ${param1.join(", ")}
+  We cant buy ${param2.join(", ")}`;
+  
+}
+
+buyWeapon([
+  { name: 'bayraktar', quantity: 8 },
+  { name: 'javelin', quantity: 800 },
+  { name: 'leopard', quantity: 200 },
+  { name: 'f-16', quantity: 18 }
+], officialAnswer);
+
+console.log(buyWeapon([
+  { name: 'bayraktar', quantity: 8 },
+  { name: 'javelin', quantity: 800 },
+  { name: 'leopard', quantity: 200 },
+  { name: 'f-16', quantity: 18 }
+], officialAnswer));
