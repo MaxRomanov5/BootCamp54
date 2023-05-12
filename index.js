@@ -215,7 +215,7 @@ const countries = [
     name: "Republic of Albania",
     population: 2837743,
     area: 28748,
-    borders: ["MNE", "GRC", "MKD", "UNK"],
+    borders: ["MNE", "GRC", "MKD", "UNK",],
   },
 ];
 
@@ -268,3 +268,16 @@ const countries = [
 // const countriesFilter = contry => contry.borders.length === 0;
 // const countriesBorders = countries.filter(countriesFilter).sort((firstCountry, secondCountry) => firstCountry.population - secondCountry.population);
 // console.log(countriesBorders);
+
+
+
+
+//Створити масив унікальних країн-сусідів в алфавітному порядку використати reduce
+
+const borderCountries = countries.reduce((borderArray, country)=>{
+ borderArray.push(...country.borders)
+ return borderArray
+},[]).filter((borderCountry, index, array) => array.indexOf(borderCountry) === index).sort((a, b)=>{
+  return a.localeCompare(b)
+})
+console.log(borderCountries);
