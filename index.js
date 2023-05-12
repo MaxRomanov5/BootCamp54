@@ -261,3 +261,10 @@ const countries = [
 // }
 
 // console.log(getAverageArea(countries));
+
+
+//TODO:============================
+//Створити масив країн у який немає кордонів з іншими державами за зростанням населення
+// const countriesFilter = contry => contry.borders.length === 0;
+// const countriesBorders = countries.filter(countriesFilter).sort((firstCountry, secondCountry) => firstCountry.population - secondCountry.population);
+// console.log(countriesBorders);
