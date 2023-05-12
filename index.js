@@ -242,3 +242,11 @@ const countries = [
 // }, 0);
 
 // console.log(totalNum);
+
+//TODO:============================
+//Повернути масив назв країн у зворотньому алфавітному порядку
+
+const sortedCountryName = countries.map(country => country.name).sort((firstCountry, secondCountry) => secondCountry.localeCompare(firstCountry));
+
+console.table(sortedCountryName)
+
