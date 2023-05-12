@@ -91,11 +91,18 @@ const countries = [{name: 'Tunisian Republic',population: 11818618,area:163610,b
 
 
 
+// //TODO:============================
+// //Створити новий масив без країн,які починаються на букву 'R'
+
+
+//  const  newCountries =  countries.filter((countrie) => {
+//   return countrie.name[0] !== "R"
+//  })
+//   console.log(newCountries)
+
 //TODO:============================
-//Створити новий масив без країн,які починаються на букву 'R'
+// Відсортувати країни за площею не мутуючи початковий масив
+//Від найбільшої до най меншої
 
-
- const  newCountries =  countries.filter((countrie) => {
-  return countrie.name[0] === "R"
- })
-  console.log(newCountries)
+// const sortnum = [...countries].sort((firstCountry, secondCountry) => secondCountry.area - firstCountry.area)
+// console.log(sortnum);
