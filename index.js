@@ -297,46 +297,68 @@ const countries = [
 //Перший колбек оброблює масив та виводить в консоль'You can buy:<Зброя та її кількісь>'
 //Другий колбек оброблює масив та виводить в консоль 'You canе buy:<Зброя та її кількісь>'
 
-const staffNato = [
-  { name: 'bayraktar', price: 300000, quantity: 10 },
-  { name: 'javelin', price: 8000, quantity: 1140 },
-  { name: 'leopard', price: 210000, quantity: 400 },
-  { name: 'f-16', price: 1000000, quantity: 8 }
-]
-function buyWeapon(neededWeapon, callback) {
-  const canBuy = [];
-  const cantBuy = [];
-// neededWeapon.forEach(weapon => {weapon.quantity >= staffNato[weapon.name].quantity});
-  for (const weapon of neededWeapon) {
-    for (const weaponNato of staffNato) {
-      if (weapon.name === weaponNato.name) {
-        if (weapon.quantity > weaponNato.quantity) {
-          cantBuy.push(weapon.name);
-        } else {
-          canBuy.push(weapon.name);
-        }
-      }
-    }
-  }
-  return callback(canBuy, cantBuy);
-}
+// const staffNato = [
+//   { name: 'bayraktar', price: 300000, quantity: 10 },
+//   { name: 'javelin', price: 8000, quantity: 1140 },
+//   { name: 'leopard', price: 210000, quantity: 400 },
+//   { name: 'f-16', price: 1000000, quantity: 8 }
+// ]
+// function buyWeapon(neededWeapon, callback) {
+//   const canBuy = [];
+//   const cantBuy = [];
+// // neededWeapon.forEach(weapon => {weapon.quantity >= staffNato[weapon.name].quantity});
+//   for (const weapon of neededWeapon) {
+//     for (const weaponNato of staffNato) {
+//       if (weapon.name === weaponNato.name) {
+//         if (weapon.quantity > weaponNato.quantity) {
+//           cantBuy.push(weapon.name);
+//         } else {
+//           canBuy.push(weapon.name);
+//         }
+//       }
+//     }
+//   }
+//   return callback(canBuy, cantBuy);
+// }
 
-function officialAnswer(param1, param2) {
-  return `We can buy ${param1.join(", ")}
-  We cant buy ${param2.join(", ")}`;
+// function officialAnswer(param1, param2) {
+//   return `We can buy ${param1.join(", ")}
+//   We cant buy ${param2.join(", ")}`;
   
+// }
+
+// buyWeapon([
+//   { name: 'bayraktar', quantity: 8 },
+//   { name: 'javelin', quantity: 800 },
+//   { name: 'leopard', quantity: 200 },
+//   { name: 'f-16', quantity: 18 }
+// ], officialAnswer);
+
+// console.log(buyWeapon([
+//   { name: 'bayraktar', quantity: 8 },
+//   { name: 'javelin', quantity: 800 },
+//   { name: 'leopard', quantity: 200 },
+//   { name: 'f-16', quantity: 18 }
+// ], officialAnswer));
+
+
+
+//Рекурсія масивів
+// Написати фунцію,яка буде рахувати суму чисел у масиві навіть,якщо в середині замість чисел інші масиви.
+const arr = [[1,3,[1,4,5]],2,3,[1,2,[1,2]]]
+
+
+function sumNumbers(arr) {
+  let total = 0;
+  for (const el of arr) {
+    if (Array.isArray(el)) {
+      const fun = sumNumbers(el);
+      total += fun;
+      continue;
+    }
+    total += el;
+    
+  }
+  return total;
 }
-
-buyWeapon([
-  { name: 'bayraktar', quantity: 8 },
-  { name: 'javelin', quantity: 800 },
-  { name: 'leopard', quantity: 200 },
-  { name: 'f-16', quantity: 18 }
-], officialAnswer);
-
-console.log(buyWeapon([
-  { name: 'bayraktar', quantity: 8 },
-  { name: 'javelin', quantity: 800 },
-  { name: 'leopard', quantity: 200 },
-  { name: 'f-16', quantity: 18 }
-], officialAnswer));
+console.log(sumNumbers(arr));
