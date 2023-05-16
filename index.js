@@ -9,4 +9,13 @@
 //   this.balance += amount;
 // }
 // addMoney.call(account, 300);
+
+// addMoney.apply(account, [300]);
+
+
+// const bindAddMoney = addMoney.bind(account);
+// console.log(bindAddMoney);
+// bindAddMoney(400);
+// bindAddMoney(500);
 // console.log(account);
+// addMoney(300);
