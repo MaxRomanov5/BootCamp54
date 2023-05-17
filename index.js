@@ -118,33 +118,35 @@
 // Написати функцію виведення можливої кількості долларів
 //Змінити курс доллара і викликати знову функцію з долларом
 //Зробити так щоб зміна курса доллара була відразу у всіх екземплярах класу
-class BankAcc {
-  #name;
 
-  static USD = 37.5;
 
-  constructor(name, balance) {
-    this.#name = name;
-    this.balance = balance;
-  }
-  
-  get myBalance() {
-    return this.balance;
-  }
-  set myBalance(amount) {
-    this.balance += amount;
-  }
-  exchange() {
-    return this.balance * BankAcc.USD;
-  }
-}
+// class BankAcc {
+//   #name;
 
-const user1 = new BankAcc('John', 1000)
-const user2 = new BankAcc('David', 3500)
-console.log(user1.exchange());
-console.log(user2.exchange());
+//   static USD = 37.5;
 
-BankAcc.USD = 10;
+//   constructor(name, balance) {
+//     this.#name = name;
+//     this.balance = balance;
+//   }
 
-console.log(user1.exchange());
-console.log(user2.exchange());
+//   get myBalance() {
+//     return this.balance;
+//   }
+//   set myBalance(amount) {
+//     this.balance += amount;
+//   }
+//   exchange() {
+//     return this.balance * BankAcc.USD;
+//   }
+// }
+
+// const user1 = new BankAcc('John', 1000)
+// const user2 = new BankAcc('David', 3500)
+// console.log(user1.exchange());
+// console.log(user2.exchange());
+
+// BankAcc.USD = 10;
+
+// console.log(user1.exchange());
+// console.log(user2.exchange());
