@@ -110,3 +110,41 @@
 // });
 
 // console.log(newList);
+
+
+//Написати клас для банківських аккаунтів. Конструктор приймає ім'я(приватна властивість) та початковий баланс.
+//Створити функцію зміни величини коштів в аккаунті та повернення балансу за допомогою гетерів та сетерів
+//Додати класу курс доллара
+// Написати функцію виведення можливої кількості долларів
+//Змінити курс доллара і викликати знову функцію з долларом
+//Зробити так щоб зміна курса доллара була відразу у всіх екземплярах класу
+class BankAcc {
+  #name;
+
+  static USD = 37.5;
+
+  constructor(name, balance) {
+    this.#name = name;
+    this.balance = balance;
+  }
+  
+  get myBalance() {
+    return this.balance;
+  }
+  set myBalance(amount) {
+    this.balance += amount;
+  }
+  exchange() {
+    return this.balance * BankAcc.USD;
+  }
+}
+
+const user1 = new BankAcc('John', 1000)
+const user2 = new BankAcc('David', 3500)
+console.log(user1.exchange());
+console.log(user2.exchange());
+
+BankAcc.USD = 10;
+
+console.log(user1.exchange());
+console.log(user2.exchange());
