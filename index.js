@@ -55,15 +55,28 @@ const countries = [{name: 'Tunisian Republic',population: 11818618,area:163610,b
 // Для додавання країн використати insertAdjacentHTML
 // Змінити колір тексту на червоний
 
-// const list = document.createElement('ul');
-// list.classList.add('list');
-// document.body.prepend(list);
-// list.style.color = 'red';
-// let items = '';
-// countries.forEach(contry => {
-//   const item = `<li> <p> ${contry.name} </p> <p> ${contry.area} </p> </li>`;
-//   items += item;
-// });
-// console.log(items);
+const list = document.createElement('ul');
+list.classList.add('list');
+document.body.prepend(list);
+list.style.color = 'red';
+let items = '';
+countries.forEach(contry => {
+  const item = `<li> <p> ${contry.name} </p> <p> ${contry.area} </p> </li>`;
+  items += item;
+});
+console.log(items);
 
-// list.insertAdjacentHTML("afterbegin", items);
+list.insertAdjacentHTML("afterbegin", items);
+
+
+// const firstElementChild = bodyElement.firstElementChild;
+
+//Країнам у назві яких є 'Republic' задати зелений колір
+
+const newList = [...list.children]
+console.log(newList);
+newList.forEach(element => {
+    element.firstElementChild.textContent.includes('Republic') ? element.style.color = "green" : "";
+    
+    console.log(element.firstElementChild);
+});
