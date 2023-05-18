@@ -61,7 +61,7 @@ document.body.prepend(list);
 list.style.color = 'red';
 let items = '';
 countries.forEach(contry => {
-  const item = `<li> <p> ${contry.name} </p> <p> ${contry.area} </p> </li>`;
+  const item = `<li> <p class = "name"> ${contry.name} </p> <p class = "area"> ${contry.area} </p> </li>`;
   items += item;
 });
 console.log(items);
@@ -80,3 +80,14 @@ newList.forEach(element => {
     
     console.log(element.firstElementChild);
 });
+
+//Видалити всі країни площа яких менша за 300000
+
+newList.forEach(element => {
+  // console.log(element.querySelector('.area'));
+  const area = element.querySelector('.area');
+  console.log(+area.textContent);
+  if (+area.textContent < 300000) {
+    element.remove();
+  }
+})
