@@ -16,7 +16,6 @@
 // elementEl1.classList.toggle("open");
 // elementEl1.classList.toggle("open");
 
-
 // const countries = [{name: 'Tunisian Republic',population: 11818618,area:163610,borders: ['DZA','LBY']},
 // {name: 'Virgin Islands',population: 30237,area:151,borders: []}
 // ,{name: 'Montenegro',population: 621718,area:13812,borders: ['ALB','BIH','HRV','UNK','SRB']}
@@ -68,7 +67,6 @@
 
 // list.insertAdjacentHTML("afterbegin", items);
 
-
 // // const firstElementChild = bodyElement.firstElementChild;
 
 // //Країнам у назві яких є 'Republic' задати зелений колір
@@ -77,7 +75,7 @@
 // console.log(newList);
 // newList.forEach(element => {
 //     element.firstElementChild.textContent.includes('Republic') ? element.style.color = "green" : "";
-    
+
 //     console.log(element.firstElementChild);
 // });
 
@@ -92,18 +90,27 @@
 //   }
 // })
 
-//Повісити на кнопку слухач,який прикожному натисканні буде змінювати 
+//Повісити на кнопку слухач,який прикожному натисканні буде змінювати
 //колір body на чорний,а колір тексту на білий
 
-
-const changeColor = (event) => {
-document.body.style.backgroundColor="black"
-document.body.style.color="white"
-}
-
-
 const refs = {
-  button: document.getElementById("button")
-}
-refs.button.addEventListener("click",changeColor)
+  button: document.getElementById("button"),
+  input1: document.querySelector(".input1"),
+  input2: document.querySelector(".input2"),
+};
 
+// refs.button.addEventListener("click", changeColor);
+// const changeColor = (event) => {
+// document.body.style.backgroundColor="black"
+// document.body.style.color="white"
+// }
+
+// Створити кнопку і два інпути.При натисканні на кнопку
+// текст всередині першого інпуту має перейти в другий інпут,
+// а текст всередині другого в перший
+
+// refs.button.addEventListener("click", (event) => {
+//   const input1New = refs.input1.value;
+//   refs.input1.value = refs.input2.value;
+//   refs.input2.value = input1New;
+// });
