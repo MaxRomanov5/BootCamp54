@@ -159,10 +159,19 @@ constructor(pizzaName, pizzaCafe){
   this.pizzaCafe = pizzaCafe;
 }
 
+getPizzaCafe ()  {
+
+ return  this.pizzaCafe 
 }
+
+}
+
 
  const carbonara = new Pizza('carbonara','dominos')
  const cesar = new Pizza('cesar','veranda')
+
+
+ console.log(carbonara.getPizzaCafe());
  console.log(carbonara);
  console.log(cesar);
 
