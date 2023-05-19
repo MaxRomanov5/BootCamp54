@@ -144,3 +144,40 @@ const refs = {
 // };
 
 // refs.form.addEventListener("submit", onSubmit);
+let DRAW_PIXEL = 1;
+
+const ourBody = document.body;
+const inputDrawSize = document.querySelector('[name="drawPx"]')
+
+inputDrawSize.addEventListener('change', onChangeDrawSize)
+
+function onChangeDrawSize() {
+  DRAW_PIXEL = inputDrawSize.value
+}
+
+  
+ourBody.style.height = "100vh";
+ourBody.addEventListener('mousedown', onClickDraw)  //1 
+ourBody.addEventListener('mouseup', onCancelDraw) //4
+
+function onClickDraw() {
+  ourBody.addEventListener('mousemove', drawSquare) // 2
+}
+
+function onCancelDraw() {
+  ourBody.removeEventListener('mousemove', drawSquare) //5
+}
+
+function drawSquare(event) { // 3 
+  console.log(event, event.pageX, event.pageY);
+
+  const box = document.createElement('div');
+  box.style.position = 'absolute';
+  box.style.left = event.pageX + 'px';
+  box.style.top = event.pageY + 'px';
+  box.style.width = DRAW_PIXEL + 'px';
+  box.style.height = DRAW_PIXEL + 'px';
+  box.style.backgroundColor = 'black';
+
+  ourBody.append(box);
+}
