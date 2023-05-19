@@ -97,6 +97,7 @@ const refs = {
   button: document.getElementById("button"),
   input1: document.querySelector(".input1"),
   input2: document.querySelector(".input2"),
+  form: document.querySelector("form"),
 };
 
 // refs.button.addEventListener("click", changeColor);
@@ -114,3 +115,32 @@ const refs = {
 //   refs.input1.value = refs.input2.value;
 //   refs.input2.value = input1New;
 // });
+
+//Написати форму покупки,де буде три обовязкових поля ім'я,назва товару і кількість
+//Всі три поля обов'язкові.
+//Сабміт форми виводить обєкт з данними в консоль
+
+// const onSubmit = (event) => {
+//   event.preventDefault();
+//   if (
+//     itemsNumber.value === "" ||
+//     name.value.length === 0 ||
+//     !customerName.value
+//   ) {
+//     console.log(itemsNumber.value === "");
+//     console.log(name.value.length === 0);
+//     console.log(!customerName.value);
+//     return;
+//   }
+
+//   const { itemsNumber, name, customerName } = event.target.elements;
+//   console.log({
+//     itemsNumber: itemsNumber.value,
+//     name: name.value,
+//     customerName: customerName.value,
+//   });
+
+//   event.target.reset();
+// };
+
+// refs.form.addEventListener("submit", onSubmit);
