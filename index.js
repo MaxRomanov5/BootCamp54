@@ -163,6 +163,14 @@ getPizzaCafe ()  {
 
  return  this.pizzaCafe 
 }
+  
+  get pizzaGetName() {
+  return this.pizzaName
+  }
+  
+  set pizzaGetName(newPizzaName) {
+   this.pizzaName = newPizzaName
+  }
 
 }
 
@@ -170,9 +178,10 @@ getPizzaCafe ()  {
  const carbonara = new Pizza('carbonara','dominos')
  const cesar = new Pizza('cesar','veranda')
 
-
+console.log(cesar);
  console.log(carbonara.getPizzaCafe());
- console.log(carbonara);
+console.log(carbonara.pizzaName);
+cesar.pizzaGetName = 'peperoni';
  console.log(cesar);
 
  
