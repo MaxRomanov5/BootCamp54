@@ -150,3 +150,20 @@
 
 // console.log(user1.exchange());
 // console.log(user2.exchange());
+
+
+class Pizza {
+
+constructor(pizzaName, pizzaCafe){
+  this.pizzaName = pizzaName;
+  this.pizzaCafe = pizzaCafe;
+}
+
+}
+
+ const carbonara = new Pizza('carbonara','dominos')
+ const cesar = new Pizza('cesar','veranda')
+ console.log(carbonara);
+ console.log(cesar);
+
+ 
