@@ -164,9 +164,8 @@ const refs = {
 //   DRAW_PIXEL = inputDrawSize.value
 // }
 
-  
 // ourBody.style.height = "100vh";
-// ourBody.addEventListener('mousedown', onClickDraw)  //1 
+// ourBody.addEventListener('mousedown', onClickDraw)  //1
 // ourBody.addEventListener('mouseup', onCancelDraw) //4
 
 // function onClickDraw() {
@@ -177,7 +176,7 @@ const refs = {
 //   ourBody.removeEventListener('mousemove', drawSquare) //5
 // }
 
-// function drawSquare(event) { // 3 
+// function drawSquare(event) { // 3
 //   // console.log(event, event.pageX, event.pageY);
 
 //   const box = document.createElement('div');
@@ -188,6 +187,10 @@ const refs = {
 //   box.style.height = DRAW_PIXEL + 'px';
 //   box.style.backgroundColor = DRAW_COLOR;
 
-
 //   ourBody.append(box);
 // }
+
+//Склонувати форму за допомогою node.cloneNode(true)
+const formClone = refs.form.cloneNode(false);
+
+console.log(formClone);
