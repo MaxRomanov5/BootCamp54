@@ -56,7 +56,6 @@
 // Написати класс списку країн
 //Дотати функцію довання країни,якщо її ще там ще немає
 
-
 // class Countries {
 //   constructor(countryList) {
 //     this.countryList = countryList;
@@ -111,14 +110,12 @@
 
 // console.log(newList);
 
-
 //Написати клас для банківських аккаунтів. Конструктор приймає ім'я(приватна властивість) та початковий баланс.
 //Створити функцію зміни величини коштів в аккаунті та повернення балансу за допомогою гетерів та сетерів
 //Додати класу курс доллара
 // Написати функцію виведення можливої кількості долларів
 //Змінити курс доллара і викликати знову функцію з долларом
 //Зробити так щоб зміна курса доллара була відразу у всіх екземплярах класу
-
 
 // class BankAcc {
 //   #name;
@@ -151,37 +148,82 @@
 // console.log(user1.exchange());
 // console.log(user2.exchange());
 
+// class Pizza {
 
-class Pizza {
+// constructor(pizzaName, pizzaCafe){
+//   this.pizzaName = pizzaName;
+//   this.pizzaCafe = pizzaCafe;
+// }
 
-constructor(pizzaName, pizzaCafe){
-  this.pizzaName = pizzaName;
-  this.pizzaCafe = pizzaCafe;
-}
+// getPizzaCafe ()  {
 
-getPizzaCafe ()  {
+//  return  this.pizzaCafe
+// }
 
- return  this.pizzaCafe 
-}
-  
-  get pizzaGetName() {
-  return this.pizzaName
-  }
-  
-  set pizzaGetName(newPizzaName) {
-   this.pizzaName = newPizzaName
-  }
+//   get pizzaGetName() {
+//   return this.pizzaName
+//   }
 
-}
+//   set pizzaGetName(newPizzaName) {
+//    this.pizzaName = newPizzaName
+//   }
 
+// }
 
- const carbonara = new Pizza('carbonara','dominos')
- const cesar = new Pizza('cesar','veranda')
+//  const carbonara = new Pizza('carbonara','dominos')
+//  const cesar = new Pizza('cesar','veranda')
 
-console.log(cesar);
- console.log(carbonara.getPizzaCafe());
-console.log(carbonara.pizzaName);
-cesar.pizzaGetName = 'peperoni';
- console.log(cesar);
+// console.log(cesar);
+//  console.log(carbonara.getPizzaCafe());
+// console.log(carbonara.pizzaName);
+// cesar.pizzaGetName = 'peperoni';
+//  console.log(cesar);
 
- 
+// Написати клас людини.Початкові параметри ім'я,зріст та вага.
+//Класс має властивості legs і hands
+// Створити гетер імені та сетер ваги
+// Створити клас Лікар який наслідує людину,приймає освіту та досвід.
+//Написати лікарю функцію яка повертає рядок '<ім'я> робить операцю <кількість рук> руками вже <досвід> років'
+
+// class Human {
+//   legs = 2;
+//   hands = 2;
+
+//   constructor({ name, height, weight }) {
+//     this._name = name;
+//     this.height = height;
+//     this._weight = weight;
+//   }
+
+//   get name() {
+//     return this._name;
+//   }
+
+//   set weight(newWeight) {
+//     this._weight = newWeight;
+//   }
+// }
+
+// class Doctor extends Human {
+//   constructor({ experience, ...otherProps }) {
+//     super(otherProps);
+//     this.experience = experience;
+//   }
+
+//   getInfo() {
+//     return `${this.name} робить операцю ${this.hands} руками вже ${this.experience} років`;
+//   }
+// }
+
+// const doctorHouse = new Doctor({
+//   experience: 5,
+//   name: "Tom",
+//   height: 1.8,
+//   weight: 70,
+// });
+
+// console.log(doctorHouse);
+
+// doctorHouse.weight = 75;
+
+// console.log(doctorHouse);
