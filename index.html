@@ -5,9 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #validation-input {
+        border: 2px solid #bdbdbd;
+      }
+
+      #validation-input.valid {
+        border-color: #4caf50;
+      }
+
+      #validation-input.invalid {
+        border-color: #f44336;
+      }
+    </style>
   </head>
   <body>
     <button type="button">Shoot</button>
+    <input
+      type="text"
+      id="validation-input"
+      data-length="6"
+      placeholder="Please enter 6 symbols"
+    />
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script type="module" src="./index.js"></script>
   </body>
