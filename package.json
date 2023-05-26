@@ -20,7 +20,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
-    "randomcolor": "^0.6.2"
+    "randomcolor": "^0.6.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
