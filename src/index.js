@@ -69,9 +69,20 @@ refs.list.addEventListener('click', (e) => {
         console.log({...elem, completed: !elem.completed});
         return {...elem, completed: !elem.completed}
       }
-      return arr;
+      return elem;
     })
     storage.save('todolist', sortArr);
    }
 
 })
+
+// 3
+// при онвленні сторінки відобразити вміст localStorage
+
+const taskList = storage.load('todolist');
+if(taskList){
+  const markUp = taskList.map((task) => {return `<li class="${task.completed ? 'complete task' : 'task'}" id = "${task.id}">
+  <span class="delete-task">-</span>${task.value}
+</li>`}).join('')
+refs.list.insertAdjacentHTML('afterbegin', markUp)
+}
