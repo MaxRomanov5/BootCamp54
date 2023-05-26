@@ -88,17 +88,32 @@ import storage from './localstorage.js';
 // }
 
 
-const fruitStorage = ['apple', 'banana', 'orange'];
+// const fruitStorage = ['apple', 'banana', 'orange'];
 
-storage.save('fruits', fruitStorage);
+// storage.save('fruits', fruitStorage);
 
-const newListFruit = JSON.parse(localStorage.getItem('fruits'))
+// const newListFruit = JSON.parse(localStorage.getItem('fruits'))
 
-newListFruit.splice(1, 1);
+// newListFruit.splice(1, 1);
 
-console.log(newListFruit);
+// console.log(newListFruit);
 
-// localStorage.removeItem('fruits');
+// // localStorage.removeItem('fruits');
 
-storage.save('fruits', newListFruit);
+// storage.save('fruits', newListFruit);
+
+
+const button = document.querySelector('button')
+button.addEventListener('click', buttonClick )
+
+function buttonClick () {
+ const array = storage.load('fruits') || []
+ array.push(1)
+ console.log(array);
+ storage.save('fruits', array)
+} 
+
+
+
+
 
