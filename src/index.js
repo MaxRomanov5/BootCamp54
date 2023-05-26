@@ -41,7 +41,6 @@ const taskAdder = evt => {
       <span class="delete-task">-</span>${refs.input.value.trim()}
     </li>`
   );
-  console.log(storage.save);
   const arr = storage.load('todolist') || [];
   arr.push({ id: savedId, value: refs.input.value, completed: false });
   storage.save('todolist', arr);
@@ -49,3 +48,30 @@ const taskAdder = evt => {
 };
 
 refs.addTask.addEventListener('click', taskAdder);
+
+//2
+// повісити слухач на список, який при натисканні на span буде
+// видаляти цілу таску зі списку та з localStorage
+// А при натисканні на таску буде додавати їй клас complete
+// та змінювати в localStorage значення ключа complete цього об'кту
+
+refs.list.addEventListener('click', (e) => {
+  const arr = storage.load('todolist');
+  if (e.target.nodeName === 'SPAN') {
+    const newArr = arr.filter(item => e.target.closest('.task').id !== item.id)
+    storage.save('todolist', newArr);
+    e.target.closest('.task').remove();
+  }
+  if (e.target.nodeName === 'LI') {
+    e.target.classList.add('complete');
+    const sortArr = arr.map(elem => {
+      if (elem.id === e.target.id) {
+        console.log({...elem, completed: !elem.completed});
+        return {...elem, completed: !elem.completed}
+      }
+      return arr;
+    })
+    storage.save('todolist', sortArr);
+   }
+
+})
