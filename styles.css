@@ -1,0 +1,13 @@
+.game {
+  font-size: 20px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.game td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000000;
+  /* padding: 10px; */
+  text-align: center;
+}
