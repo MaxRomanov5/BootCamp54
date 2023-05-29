@@ -3,6 +3,24 @@ let player = "o";
 const playerName = document.querySelector(".gamePlayer");
 const squares = [...document.querySelectorAll("td")];
 
+const save = (key, value) => {
+  try {
+    const serializedState = JSON.stringify(value);
+    localStorage.setItem(key, serializedState);
+  } catch (error) {
+    console.error("Set state error: ", error.message);
+  }
+};
+
+const load = (key) => {
+  try {
+    const serializedState = localStorage.getItem(key);
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (error) {
+    console.error("Get state error: ", error.message);
+  }
+};
+
 table.addEventListener("click", fieldChange);
 
 function fieldChange(evt) {
@@ -20,6 +38,10 @@ function fieldChange(evt) {
   //   player === "o" ? (player = "x") : (player = "o");
   //   playerName.textContent = `Current Move: ${player}`;
   checkResults();
+
+  const arr = squares.map((square) => square.textContent);
+
+  save("currentGame", arr);
 }
 
 function checkResults() {
@@ -97,3 +119,11 @@ function counterActivate() {
   }
 }
 table.addEventListener("click", counterActivate);
+
+const currentGameFromLS = load("currentGame");
+
+if (currentGameFromLS) {
+  squares.forEach(
+    (square, idx) => (square.textContent = currentGameFromLS[idx])
+  );
+}
