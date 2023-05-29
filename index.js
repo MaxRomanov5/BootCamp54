@@ -11,7 +11,7 @@ function fieldChange(evt) {
   }
   if (evt.target.textContent === "") {
     evt.target.textContent = player;
-
+    console.log(evt.target.textContent);
     player === "o" ? (player = "x") : (player = "o");
     playerName.textContent = `Current Move: ${player}`;
   }
@@ -82,5 +82,18 @@ function checkResults() {
 }
 
 function winner(xo) {
-  alert(`${xo} wins`);
+  console.log(`${xo} wins`);
+  squares.map((square) => (square.textContent = ""));
 }
+
+let counter = 0;
+
+function counterActivate() {
+  counter += 1;
+  if (counter >= 9) {
+    counter = 0;
+    squares.map((square) => (square.textContent = ""));
+    console.log("nobody wins, try again!");
+  }
+}
+table.addEventListener("click", counterActivate);
