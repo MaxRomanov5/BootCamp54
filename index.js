@@ -47,3 +47,25 @@
 // };
 
 // countWithDelay(3000, 6, 1000);
+
+// Функція startTimer повинна логувати кожен елемент масиву один раз на секунду.
+// Коли черга дійде до останнього елемента масиву, продовжити логувати у зворотному порядку
+// поки не дійде до першого елемента, потім зупинити процес.
+// startTimer(["a", "b", "c", "d", "e", "f"]);
+// function startTimer(arr) {
+//   let i = -1;
+//   const timerId = setInterval(() => {
+//     i++;
+//     console.log(arr[i]);
+//     if (i === arr.length - 1) {
+//       const reverseTimerId = setInterval(() => {
+//         i--;
+//         console.log(arr[i]);
+//         if (i === 0) {
+//           clearInterval(reverseTimerId);
+//         }
+//       }, 1000);
+//       clearInterval(timerId);
+//     }
+//   }, 1000);
+// }
