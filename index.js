@@ -25,3 +25,25 @@
 // decrementButtonRef.addEventListener("click", () => {
 //   count -= 1;
 // });
+
+// Функція countWithDelay приймає 3 аргументи:
+// 1) кількість секунд перед тим як спрацює ф-ція console.log
+// 2) скільки разів має відпрацювати console.log
+// 3) затримка між викликами ф-ції
+
+// const countWithDelay = (delay = 0, times = 0, stepInterval = 0) => {
+//   setTimeout(() => {
+//       let quantity = 1;
+//       console.log(quantity);
+
+//     const intId = setInterval(() => {
+//       quantity += 1;
+//       console.log(quantity);
+//       if (quantity === times) {
+//         clearInterval(intId);
+//       }
+//     }, stepInterval);
+//   }, delay);
+// };
+
+// countWithDelay(3000, 6, 1000);
