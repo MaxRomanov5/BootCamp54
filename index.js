@@ -69,3 +69,25 @@
 //     }
 //   }, 1000);
 // }
+
+// Створити з масиву об'єктів масив промісів
+// і вивести в консоль той,що виконається швидше(всі)
+
+const cars = [{name:'BMW',speed:300},{name:'Lanos',speed:400},{name:'Mersedes',speed:240},{name:'Bugatti',speed:250},{name:'Pagani',speed:220}];
+
+
+
+const makePromise = (text, delay) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(text), delay);
+  }); 
+};
+
+const newCars = cars.map((el) => {
+    return makePromise(el.name, el.speed);
+})
+
+Promise.all(newCars)
+  .then((fastestCar) => {
+    console.log('Найшвидша машина:', fastestCar);
+  })
