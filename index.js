@@ -73,21 +73,38 @@
 // Створити з масиву об'єктів масив промісів
 // і вивести в консоль той,що виконається швидше(всі)
 
-const cars = [{name:'BMW',speed:300},{name:'Lanos',speed:400},{name:'Mersedes',speed:240},{name:'Bugatti',speed:250},{name:'Pagani',speed:220}];
+// const cars = [{name:'BMW',speed:300},{name:'Lanos',speed:400},{name:'Mersedes',speed:240},{name:'Bugatti',speed:250},{name:'Pagani',speed:220}];
 
+// const makePromise = (text, delay) => {
+//   return new Promise(resolve => {
+//     setTimeout(() => resolve(text), delay);
+//   });
+// };
 
+// const newCars = cars.map((el) => {
+//     return makePromise(el.name, el.speed);
+// })
 
-const makePromise = (text, delay) => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(text), delay);
-  }); 
-};
+// Promise.all(newCars)
+//   .then((fastestCar) => {
+//     console.log('Найшвидша машина:', fastestCar);
+//   })
 
-const newCars = cars.map((el) => {
-    return makePromise(el.name, el.speed);
-})
+// Написати фунцію ланцюгової гернерації чисел
 
-Promise.all(newCars)
-  .then((fastestCar) => {
-    console.log('Найшвидша машина:', fastestCar);
-  })
+// функція  буде повертати проміс ньому буде генеруватись число від 0 до 1
+// якщо число менше 0.5 то ми створюємо помилку throw new Error`first number is small`
+// якщо число більше 0.5 відбувається resolve проміса
+// в консоль виводиться `first number is big` і відбувається генерація другого числа
+// і знову перевірка як в попередньому промісі
+// функція генерує максимум два числа і в кінці виводть 'endGame' в будь-якому випадку
+
+const randomNumber = new Promise((resolve, reject) => {
+  const random = Math.random();
+
+  if (random < 0.5) {
+    throw new Error(`first number is small`);
+  } else {
+    resolve(`first number is big`);
+  }
+});
