@@ -99,12 +99,25 @@
 // і знову перевірка як в попередньому промісі
 // функція генерує максимум два числа і в кінці виводть 'endGame' в будь-якому випадку
 
-const randomNumber = new Promise((resolve, reject) => {
-  const random = Math.random();
+// const randomNumber = new Promise((resolve) => {
+//   const random = Math.random();
 
-  if (random < 0.5) {
-    throw new Error(`first number is small`);
-  } else {
-    resolve(`first number is big`);
-  }
-});
+//   if (random < 0.5) {
+//     throw new Error(`first number is small`);
+//   } else {
+//     resolve(`first number is big`);
+//   }
+// }).then((message) => {
+//   console.log(message);
+//   const random = Math.random();
+
+//   if (random < 0.5) {
+//     throw new Error(`second number is small`);
+//   } else {
+//     console.log(`second number is big`);
+//   }
+// });
+// .catch((err) => console.log(err.message))
+// .finally(() => {
+//   console.log("endGame");
+// });
