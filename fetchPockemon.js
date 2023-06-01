@@ -1,4 +1,4 @@
-export const fetchPockemon = (namePock) {
+export const getPockemon = (namePock) {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${namePock}`)
     .then(response => {
       if (!response.ok) {
