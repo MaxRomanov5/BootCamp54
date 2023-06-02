@@ -11,8 +11,8 @@ export function getPockemon(namePock) {
     });
 }
 
-export function getPockemonList(namePock) {
-  return fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=5`)
+export function getPockemonList(offset) {
+  return fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=5`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.status);
