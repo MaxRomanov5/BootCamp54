@@ -1,4 +1,4 @@
-import getPockemon from "./fetchPockemon.js";
+import { getPockemon, getPockemonList } from "./fetchPockemon.js";
 
 const refs = {
   input: document.querySelector('[type="text"]'),
@@ -17,4 +17,13 @@ function onBtnClick() {
   });
 }
 
-getPockemon("pikachu").then((data) => console.log(data));
+getPockemonList().then((data) => {
+  console.log(data);
+  data.results.forEach((dataItem) => {
+    getPockemon(dataItem.name).then((data) => {
+      console.log(data);
+      const markup = `<div><p>${data.name}</p><img src="${data.sprites.other.dream_world.front_default}" alt="${data.name}"></div>`;
+      refs.container.insertAdjacentHTML("beforeend", markup);
+    });
+  });
+});
