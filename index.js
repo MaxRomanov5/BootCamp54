@@ -1,3 +1,5 @@
+// const { method } = require("lodash");
+
 // Get all products
 function getAllProducts() {
   fetch("https://api.escuelajs.co/api/v1/products")
@@ -60,5 +62,18 @@ function updateProduct(prodId, updateObj) {
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
 }
-updateProduct(302, productToUpdate);
+// updateProduct(302, productToUpdate);
+
+// delete product
+
+function delProd(id) {
+  fetch(`https://api.escuelajs.co/api/v1/products/${id}`, {
+    method: "DELETE",
+  })
+    .then((resp) => resp.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+}
+// delProd(302);
+
 getAllProducts();
