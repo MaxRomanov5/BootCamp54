@@ -94,6 +94,7 @@ async function getAllProducts() {
       "https://api.escuelajs.co/api/v1/products"
     );
     console.log(response);
+    return response;
   } catch (error) {
     console.log(error);
   }
@@ -169,7 +170,6 @@ async function updateProduct(prodId, updateObj) {
 // updateProduct(550, productToUpdate);
 // getAllProducts();
 
-
 //---------------
 // delete product
 async function deleteProduct(id) {
@@ -178,6 +178,7 @@ async function deleteProduct(id) {
       `https://api.escuelajs.co/api/v1/products/${id}`
     );
     console.log(response);
+    return response;
   } catch (error) {
     console.log(error);
   }
@@ -185,4 +186,20 @@ async function deleteProduct(id) {
 
 // deleteProduct(550);
 
-// getAllProducts();
+getAllProducts();
+
+const str = "Ashok";
+
+async function deleteProducts(title) {
+  const response = await getAllProducts();
+  const dataArr = response.data;
+
+  dataArr.forEach(async (el) => {
+    if (el.title === title) {
+      const result = await deleteProduct(el.id);
+      console.log(result.data);
+    }
+  });
+}
+
+// deleteProducts(str);
